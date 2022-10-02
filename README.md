@@ -9,9 +9,8 @@ For this project, I am planning to:
 3. Add multiplayer
 4. Add ability to save game in cloud
 
-TODO:
-{Provide a link to your YouTube demonstration.  It should be a one minute demo of the software running and a walkthrough of the code.}
-[Software Demo Video](http://youtube.link.goes.here)
+# Demo videos
+* [Sprint 1](http://youtube.link.goes.here)
 
 # Development Environment
 
@@ -23,5 +22,4 @@ Python
 
 # Useful Websites
 
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Arcade (Graphics API for Python)](https://api.arcade.academy/en/latest/examples/platform_tutorial/index.html)
