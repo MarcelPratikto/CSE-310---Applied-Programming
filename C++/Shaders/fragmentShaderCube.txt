@@ -1,0 +1,17 @@
+#version 330 core
+
+in vec2 textureInput;
+
+
+uniform sampler2D textureSampler;
+uniform sampler2D textureSampler1;
+uniform float mixAlpha;
+
+
+out vec4 color;
+
+
+void main()
+{
+	color = mix(texture(textureSampler, textureInput), texture(textureSampler1, textureInput), mixAlpha);
+}
