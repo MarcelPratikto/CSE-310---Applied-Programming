@@ -4,13 +4,14 @@ In order to further my learning as a computer science major,
 I am committed to push the boundaries of what I'm used to in terms programming.
 
 For this project, I am planning to:
-1. Create a game engine
-2. Add GIS mapping to the game
-3. Add multiplayer
-4. Add ability to save game in cloud
+1. Create a game in Python
+2. Dabble with DirectX 12 in C++
+3. 
+4. 
 
 # Demo videos
-* [Sprint 1](http://youtube.link.goes.here)
+* [Sprint 1]()
+* [Sprint 2]()
 
 # Development Environment
 
@@ -19,7 +20,9 @@ Visual Studio Code
 
 Programming languages used:
 Python
+C++
 
 # Useful Websites
 
 * [Arcade (Graphics API for Python)](https://api.arcade.academy/en/latest/examples/platform_tutorial/index.html)
+* [DirectX 12 Tutorial](https://www.3dgep.com/learning-directx-12-1/)
