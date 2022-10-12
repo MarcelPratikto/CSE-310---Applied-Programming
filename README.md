@@ -8,10 +8,11 @@ For this project, I am planning to:
 2. Dabble with C++
 3. 
 4. 
+5.  
 
 # Demo videos
 * [Sprint 1]()
-* [Sprint 2]()
+* [Sprint 2](https://youtu.be/U5fhrKRoq8A)
 
 # Development Environment
 
@@ -25,5 +26,4 @@ C++
 # Useful Websites
 
 * [Arcade (Graphics API for Python)](https://api.arcade.academy/en/latest/examples/platform_tutorial/index.html)
-* [DirectX 12 Tutorial](https://www.3dgep.com/learning-directx-12-1/)
-* []()
+* [OpenGL Tutorial](https://learnopengl.com/)
