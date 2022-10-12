@@ -5,7 +5,7 @@ I am committed to push the boundaries of what I'm used to in terms programming.
 
 For this project, I am planning to:
 1. Create a game in Python
-2. Dabble with DirectX 12 in C++
+2. Dabble with C++
 3. 
 4. 
 
@@ -26,3 +26,4 @@ C++
 
 * [Arcade (Graphics API for Python)](https://api.arcade.academy/en/latest/examples/platform_tutorial/index.html)
 * [DirectX 12 Tutorial](https://www.3dgep.com/learning-directx-12-1/)
+* []()
