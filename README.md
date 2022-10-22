@@ -6,13 +6,16 @@ I am committed to push the boundaries of what I'm used to in terms programming.
 For this project, I am planning to:
 1. Create a game in Python
 2. Dabble with C++
-3. 
-4. 
+3. Create backend for my personal portfolio site
+4. Create frontend for my personal portfolio site
 5.  
 
 # Demo videos
 * [Sprint 1]()
 * [Sprint 2](https://youtu.be/U5fhrKRoq8A)
+* [Sprint 3]()
+* [Sprint 4]()
+* [Sprint 5]()
 
 # Development Environment
 
