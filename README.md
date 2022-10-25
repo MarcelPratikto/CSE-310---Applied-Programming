@@ -7,7 +7,7 @@ For this project, I am planning to:
 1. Create a game in Python
 2. Dabble with C++
 3. Create backend for my personal portfolio site
-4. Create frontend for my personal portfolio site
+4. 
 5.  
 
 # Demo videos
@@ -25,8 +25,11 @@ Visual Studio Code
 Programming languages used:
 Python
 C++
+JavaScript
+Node.js
 
 # Useful Websites
 
 * [Arcade (Graphics API for Python)](https://api.arcade.academy/en/latest/examples/platform_tutorial/index.html)
 * [OpenGL Tutorial](https://learnopengl.com/)
+* [Node.js Tutorial](https://www.w3schools.com/nodejs/default.asp)
