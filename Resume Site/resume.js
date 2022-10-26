@@ -37,7 +37,15 @@ function createTable(con, table_name, col){
     var sql = `CREATE TABLE ${table_name} ${col_string}`;
     con.query(sql, function (err, result) {
         if (err) throw err;
-        console.log("Table created");
+        console.log(`Table created: ${table_name}`);
+    });
+}
+
+function deleteTable(con, table_name){
+    var sql = `DROP TABLE ${table_name}`;
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log(`Table deleted: ${table_name}`);
     });
 }
 
@@ -50,13 +58,20 @@ function addColumn(con, table_name, col){
     });
 }
 
-// start connect
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-});
-var experience_col = ["company_name", "title", "location", "start_date", "end_date"]
-createTable(con, "experience", experience_col)
-addColumn(con, "experience", "description")
-// end connection
-con.end();
+
+
+// MAIN
+function main(){
+    // start connect
+    con.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+    });
+    var experience_col = ["company_name", "title", "location", "start_date", "end_date"];
+    createTable(con, "experience", experience_col);
+    addColumn(con, "experience", "description");
+    deleteTable(con, "experience");
+    // end connection
+    con.end();
+}
+main()
