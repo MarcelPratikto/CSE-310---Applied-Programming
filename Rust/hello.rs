@@ -3,6 +3,9 @@ use std::thread;
 use std::time::Duration;
 use cute::c;
 use rand::Rng;
+use std::sync::Semaphore;
+extern crate time;
+use time::PreciseTime;
 
 // Constants
 const MAX_QUEUE_SIZE:u8 = 10;
@@ -33,6 +36,9 @@ impl Car{
         self.make = car_makes[rng.gen_range(0..car_makes.len())].to_string();
         self.model = car_models[rng.gen_range(0..car_models.len())].to_string();
         self.year = car_years[rng.gen_range(0..car_years.len())];
+
+        // sleep a little
+        //thread::sleep(Duration::from_millis(10 / SLEEP_REDUCE_FACTOR));
     }
 
     fn display(&self){
@@ -64,36 +70,87 @@ impl Queue251{
     }
 }
 
+// Factory stuff
 struct Factory{
     cars_to_produce:u32,
-    sem_available_slots:u32,
+    sem_available_slots:Semaphore,
     car_queue:Vec<Queue251>,
-    num_dealers:u32
+    num_dealers:u32,
+    finished:bool
 }
 impl Factory{
-    fn init(&self, car_queue:Vec<Queue251>, sem_available_slots:u32, num_dealers:u32){
+    fn init(&self, car_queue:Vec<Queue251>, sem_available_slots:Semaphore, num_dealers:u32){
         let mut rng = rand::thread_rng();
         self.cars_to_produce = rng.gen_range(200..300);
         self.sem_available_slots = sem_available_slots;
         self.num_dealers = num_dealers;
+        self.finished = false;
     }
     fn run(&self){
         println!("PRODUCING {} CARS", self.cars_to_produce);
         for i in self.cars_to_produce{
             self.car_queue.put(Car.init());
+            self.sem_available_slots.release();
         }
         println!("FINISHED MAKING CARS!!!");
         for i in 0..num_dealers{
-            
+            self.finished = true;
+            self.sem_available_slots.release();
+            self.num_dealers -= 1;
         }
     }
 }
 
+// Dealer stuff
+struct Dealer{
+    cars_recv:u32,
+    car_queue:Vec<Queue251>,
+    sem_available_slots:Semaphore
+}
+impl Dealer{
+    fn init(&self, car_queue:Vec<Queue251>, sem_available_slots:Semaphore){
+        self.cars_recv = 0;
+        self.car_queue = car_queue;
+        self.sem_available_slots = sem_available_slots;
+    }
+    fn run(&self){
+        loop{
+            if self.sem_available_slots.acquire(){
+                let car = self.car_queue.get();
+                if car.finished{
+                    println!("FINISHED GETTING CARS!!!");
+                    break;
+                }
+                self.cars_recv += 1;
+            }
+        }
+        // sleep a little
+        //thread::sleep(Duration::from_millis(10 / SLEEP_REDUCE_FACTOR));
+    }
+}
+
 // Run production
-fn run_production(factory_count:i32, dealer_count:i32) -> (f32,u32,Vec<u32>,Vec<u32>){
-    
+fn run_production(factory_count:usize, dealer_count:usize) -> (f32,u32,Vec<u32>,Vec<u32>){
+    // create semaphores
+    let sem_available_slots = Semaphore::new(0);
+    // create queue
+    let car_queue = Queue251.init();
+    // track factory and dealer stats
     let mut dealer_stats = vec![0;dealer_count];
     let mut factory_stats = vec![0;factory_count];
+
+    // create factories
+    let mut factories = Vec::new();
+    for count in 0..factory_count{
+        factories.push(Factory.init(car_queue, sem_available_slots, dealer_count));
+    }
+    // create dealers
+    let mut dealers = Vec::new();
+    for count in 0..dealer_count{
+        dealers.push(Dealer.init(car_queue, sem_available_slots));
+    }
+
+    let start = PreciseTime::now();
 
     let dealer_index = 0;
     for dealer in dealers{
@@ -101,6 +158,9 @@ fn run_production(factory_count:i32, dealer_count:i32) -> (f32,u32,Vec<u32>,Vec<
         dealer_index += 1;
     }
     //run_time = log.stop_timer(f'{sum(dealer_stats)} cars have been created')
+    let end = PreciseTime::now();
+    let run_time = end - start;
+    println!("{} cars have been created", dealer_stats.iter().sum::<u32>());
 
     let factory_index = 0;
     for factory in factories{
