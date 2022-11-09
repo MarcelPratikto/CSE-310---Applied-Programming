@@ -23,11 +23,11 @@ Tools used to develop software:
 Visual Studio Code
 
 Programming languages used:
-Python
-C++
-JavaScript
-Node.js
-Rust
+* Python
+* C++
+* JavaScript
+* Node.js
+* Rust
 
 # Useful Websites
 
