@@ -14,13 +14,14 @@ For this project, I am planning to:
 * [Sprint 1]()
 * [Sprint 2](https://youtu.be/U5fhrKRoq8A)
 * [Sprint 3](https://youtu.be/SkegdekTa1c)
-* [Sprint 4](https://youtu.be/SkegdekTa1c)
-* []()
+* [Sprint 4]()
+* [Sprint 5]()
 
 # Development Environment
 
 Tools used to develop software:
-Visual Studio Code
+* Visual Studio Code
+* ms-sys
 
 Programming languages used:
 * Python
@@ -28,6 +29,8 @@ Programming languages used:
 * JavaScript
 * Node.js
 * Rust
+* Pandas
+* Numpy
 
 # Useful Websites
 
@@ -35,3 +38,5 @@ Programming languages used:
 * [OpenGL Tutorial](https://learnopengl.com/)
 * [Node.js Tutorial](https://www.w3schools.com/nodejs/default.asp)
 * [Rust Tutorial](https://www.tutorialspoint.com/rust/index.htm)
+* [Pandas Tutorial](https://pandas.pydata.org/docs/user_guide/index.html)
+* [Numpy Documentation](https://numpy.org/doc/stable/)
