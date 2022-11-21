@@ -1,14 +1,14 @@
 # Overview
 
 In order to further my learning as a computer science major,
-I am committed to push the boundaries of what I'm used to in terms programming.
+I am committed to push the boundaries of what I'm used to working with in terms programming.
 
 For this project, I am planning to:
 1. Create a game in Python
 2. Dabble with C++
 3. Create backend for my personal portfolio site
 4. Dabble with Rust
-5.  
+5. Data Analysis
 
 # Demo videos
 * [Sprint 1]()
