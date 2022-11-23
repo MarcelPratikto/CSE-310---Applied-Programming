@@ -51,20 +51,42 @@ The second table shows that the job with the highest average salary is Data Anal
 
 ### GRAND QUESTION 2
 #### Salary by year
-Answer
+For this question, I'm not going to focus on the highest paying jobs, but on the jobs that I'm more likely to apply to. I want to see the change in salary for the following jobs that are more common:
+* Data Engineer
+* Data Scientist
+* ML Engineer (I decided to combine Machine Learning Engineer with ML Engineer since they're the same)
+
+ML Engineers have seen a huge spike in salary.
 
 ##### TECHNICAL DETAILS
-```python 
-
-```
-Code result
+|    |   work_year |   salary_in_usd | job_title      |
+|---:|------------:|----------------:|:---------------|
+|  0 |        2020 |          100656 | Data Engineer  |
+|  1 |        2021 |           81254 | Data Engineer  |
+|  2 |        2022 |           84666 | Data Engineer  |
+|  3 |        2020 |           71256 | Data Scientist |
+|  4 |        2021 |           72144 | Data Scientist |
+|  5 |        2022 |           95242 | Data Scientist |
+|  6 |        2020 |           43331 | ML Engineer    |
+|  7 |        2021 |           59186 | ML Engineer    |
+|  8 |        2022 |          121284 | ML Engineer    |
+![Change in Salary Over Time](DSDEMLE_chart.png)
 
 ### GRAND QUESTION 3
 #### Salary by experience level
-Answer
+The average salary, in the years provided by the dataset, are shown in the table below.
+It is in alphabetical order instead of seniority.
+* EN: $61,140
+* MI: $91,129
+* SE: $145,077
+* EX: $189,427
+
+That is an almost 3x increase in salary from entry level to executive level!
 
 ##### TECHNICAL DETAILS
-```python 
-
-```
-Code result
+| experience_level   |   salary_in_usd |
+|:-------------------|----------------:|
+| EN                 |           61140 |
+| EX                 |          189427 |
+| MI                 |           91129 |
+| SE                 |          145077 |
